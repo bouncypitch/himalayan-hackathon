@@ -1,0 +1,11 @@
+# Shared camera defaults consumed by rig configs, the camera viewer (src/himalayan/vision/camera_viewer),
+# and the rope-pull detector (src/himalayan/vision/rope_pull_detector). Keep camera keys stable
+# across every recording session — pi0.5's rename_map and the dataset merge step both expect it.
+
+camera_keys:
+  - cam_high
+  - wrist
+
+default_width: 640
+default_height: 480
+default_fps: 30

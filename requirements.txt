@@ -1,0 +1,14 @@
+# Core hardware/policy stack: install from the fork, not upstream LeRobot.
+# pip install "lerobot[pi05] @ git+https://github.com/makermods-robotics/lerobot.git@robot/makermods-maker-arm"
+
+opencv-python
+numpy
+pyyaml
+pynput
+
+# Voice (plan §7)
+livekit-agents
+livekit-plugins-openai
+
+# Verify versions against what's actually importable on the fork at kickoff --
+# pin nothing here in advance since the fork's own requirements may conflict.

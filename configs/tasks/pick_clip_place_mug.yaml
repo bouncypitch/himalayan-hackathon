@@ -1,0 +1,16 @@
+# The single core manipulation task for this hackathon (plan §3, §5).
+# Keep this exact instruction string identical everywhere: recording, fine-tuning
+# conditioning, and voice input normalization (plan §7).
+
+task_id: pick_clip_place_mug
+instruction: "Pick up the clip and place it in the mug"
+
+repo_id_raw: "{HF_USER}/himalayan-clip-mug-raw"
+repo_id_train: "{HF_USER}/himalayan-clip-mug-v1"
+
+episode_targets:
+  min_viable: 15
+  target: 30
+  stretch: 50
+
+degraded_condition_eval_episodes: 8   # Extreme-Condition Relevance evidence, plan §3

@@ -1,0 +1,18 @@
+# The reactive rope-pull-and-hold behavior (plan §4). Not instruction-conditioned —
+# this is a vision trigger + scripted controller, not a pi0.5 task.
+
+task_id: rope_pull_hold
+camera_key: wrist                # which camera the optical-flow ROI is measured on
+
+roi:                              # pixel box within the camera frame to monitor, tune during calibration
+  x: 200
+  y: 150
+  width: 240
+  height: 180
+
+flow_magnitude_threshold: 8.0     # tune during calibration (plan §4, Day 1 morning)
+debounce_frames: 4                # consecutive over-threshold frames required to trigger
+
+hold_timeout_s: 15                # release HOLDING state automatically after this long, if no manual release
+
+announcement_on_trigger: "Rope pull detected. Grabbing."

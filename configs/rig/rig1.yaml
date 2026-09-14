@@ -1,0 +1,31 @@
+# Rig 1 — the single Maker-arm rig for this hackathon.
+# Fork: github.com/makermods-robotics/lerobot, branch: robot/makermods-maker-arm
+# Fill in ports/serials during the kickoff hardware check (plan §2) — these are placeholders.
+
+robot_id: himalayan_rig1
+
+follower:
+  type: maker_follower
+  port: /dev/tty.usbmodemXXXX      # TODO: fill in at kickoff
+  max_relative_target: 15          # degrees, safety clamp on per-step joint delta during teleop/inference
+
+leader:
+  type: rebot_102_leader
+  port: /dev/tty.usbmodemYYYY      # TODO: fill in at kickoff
+  joint_mapping_preset: maker      # retargets ReBot 102 leader kinematics onto the Maker follower
+
+cameras:
+  cam_high:
+    type: opencv
+    index_or_path: 0               # TODO: confirm device index at kickoff
+    width: 640
+    height: 480
+    fps: 30
+  wrist:
+    type: opencv
+    index_or_path: 1               # TODO: confirm device index at kickoff
+    width: 640
+    height: 480
+    fps: 30
+
+fps: 30                            # control loop / recording fps, must match training fps
